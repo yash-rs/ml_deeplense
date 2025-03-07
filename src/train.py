@@ -18,11 +18,11 @@ def train_model():
 
     model = CNNmodel(num_classes=3)
     loss_fn = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
-
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
     for epoch in range(NUM_EPOCHS):
         model.train()
         total_loss = 0
+        
 
         for images, labels in train_loader:
             
